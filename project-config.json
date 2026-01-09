@@ -1,0 +1,53 @@
+{
+    "name": "MyLambdaBuildProject",
+    "source": {
+        "type": "GITHUB",
+        "location": "https://github.com/mateocangrejo/blog_lambdacontainer.git",
+        "gitCloneDepth": 0,
+        "gitSubmodulesConfig": {
+            "fetchSubmodules": false
+        },
+        "buildspec": "",
+        "reportBuildStatus": false,
+        "insecureSsl": false
+    },
+    "secondarySources": [],
+    "secondarySourceVersions": [],
+    "artifacts": {
+        "type": "S3",
+        "location": "containerlambdacicd-blog-artifacts-mateocangrejo",
+        "path": "",
+        "namespaceType": "NONE",
+        "name": "MyLambdaBuildProject",
+        "packaging": "NONE",
+        "overrideArtifactName": false,
+        "encryptionDisabled": false
+    },
+    "secondaryArtifacts": [],
+    "cache": {
+        "type": "NO_CACHE"
+    },
+    "environment": {
+        "type": "LINUX_CONTAINER",
+        "image": "aws/codebuild/amazonlinux2-x86_64-standard:5.0",
+        "computeType": "BUILD_GENERAL1_SMALL",
+        "environmentVariables": [],
+        "privilegedMode": false,
+        "imagePullCredentialsType": "CODEBUILD"
+    },
+    "serviceRole": "arn:aws:iam::300903264828:role/containerlambdacicd-codebuild-role",
+    "timeoutInMinutes": 60,
+    "queuedTimeoutInMinutes": 480,
+    "encryptionKey": "arn:aws:kms:us-east-2:300903264828:alias/aws/s3",
+    "tags": [],
+    "logsConfig": {
+        "cloudWatchLogs": {
+            "status": "ENABLED"
+        },
+        "s3Logs": {
+            "status": "DISABLED",
+            "encryptionDisabled": false
+        }
+    },
+    "fileSystemLocations": []
+}
